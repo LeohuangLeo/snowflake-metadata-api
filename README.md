@@ -64,3 +64,71 @@ def get_snowflake_connection(database: str):
         schema='your_schema',
     )
     return conn
+```
+
+## API Endpoints
+
+Here’s a breakdown of the available API endpoints.
+
+### 1. **Get All Schemas in a Database**
+- **Endpoint**: `GET /schemas/{database}`
+- **Parameters**:  
+    - `database`: The name of the Snowflake database.
+- **Response**:  
+    A list of schema names in the specified database.
+
+**Example Request**:
+
+```bash
+curl http://127.0.0.1:8000/schemas/my_database
+```
+
+### 2. Get Table Metadata
+- **Endpoint**: `GET /table-metadata/{database}/{schema}/{table}`
+- **Parameters**:
+  - `database`: The name of the Snowflake database.
+  - `schema`: The name of the schema within the database.
+  - `table`: The name of the table whose metadata you wish to retrieve.
+
+- **Description**:  
+  This endpoint returns metadata for the specified table in a given schema and database. The metadata includes column names, data types, and descriptions (if available).
+
+- **Response**:  
+  A list of dictionaries, where each dictionary contains the column name, data type, and description of the column.
+
+**Example Request**:
+
+```bash
+curl http://127.0.0.1:8000/table-metadata/my_database/my_schema/my_table
+```
+
+### Get Table Metrics
+- **Endpoint**: `GET /table-metrics/{database}/{schema}/{table}`
+- **Parameters**:
+  - `database`: The name of the Snowflake database.
+  - `schema`: The name of the schema within the database.
+  - `table`: The name of the table whose metrics you want to retrieve.
+
+- **Description**:  
+  This endpoint returns summary statistics for each column in the specified table. It provides different types of statistics based on the column data types:
+
+  - For **numeric columns** (e.g., `NUMBER`, `INTEGER`, `DECIMAL`, `FLOAT`, `DOUBLE`), the following statistics will be calculated:
+    - Non-null count
+    - Mean (average)
+    - Minimum value
+    - Maximum value
+
+  - For **non-numeric columns** (e.g., `VARCHAR`, `TEXT`, `DATE`), the following statistics will be provided:
+    - Non-null count
+    - Unique count
+
+  These statistics help you understand the distribution and completeness of the data in your table.
+
+- **Response**:  
+  A dictionary where each key is a column name and its value is another dictionary containing various statistics for that column.
+
+**Example Request**:
+
+```bash
+curl http://127.0.0.1:8000/table-metrics/my_database/my_schema/my_table
+
