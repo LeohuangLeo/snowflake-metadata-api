@@ -82,15 +82,16 @@ class SnowflakeService:
             result_dict = {}
             for column_name, metrics in column_stats.items():
                 query = self._build_column_stats_query(schema_name, table_name, column_name, metrics)
+                print(query)
                 result = self._execute_query(query, database)
                 
                 # The results will be a single row of statistics per column
                 result_dict[column_name] = {
                     "non_null_count": result[0][1],
-                    "mean": result[0][2],
-                    "min": result[0][3],
-                    "max": result[0][4],
-                    "unique_count": result[0][5]
+                    "unique_count": result[0][2],
+                    "mean": result[0][3],
+                    "min": result[0][4],
+                    "max": result[0][5],
                 }
 
             return result_dict
@@ -112,4 +113,5 @@ class SnowflakeService:
         SELECT {col_name}, {col_non_null_count}, {col_unique_count}, {col_mean}, {col_min}, {col_max}
         FROM {schema_name}.{table_name}
         """
+
 
