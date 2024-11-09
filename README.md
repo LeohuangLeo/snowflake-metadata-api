@@ -141,9 +141,9 @@ curl http://127.0.0.1:8000/table-metrics/my_database/my_schema/my_table
 
 ## Q&A
 
-- It tooks me approximately 3.5 hours to complete the project.
-- It's a interesting project to work with as snowflake is a well-known datawarehouse and I get a chance to work and play around with it.
-- Next Step
+- **It tooks me approximately 3.5 hours to complete the project.**
+- **It's a interesting project to work with as snowflake is a well-known datawarehouse and I get a chance to work and play around with it.**
+- **Next Step**
  - Add test cases.
  - Optimize the way to query the snowflake table to get metrics.
  - Add more details annotation in codebase. e.g., add comment on class and function explain the funtionality of it.
