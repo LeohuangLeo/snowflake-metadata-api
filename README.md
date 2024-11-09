@@ -131,7 +131,7 @@ curl http://127.0.0.1:8000/table-metadata/my_database/my_schema/my_table
 
 ```bash
 curl http://127.0.0.1:8000/table-metrics/my_database/my_schema/my_table
-
+```
 
 <img width="857" alt="image" src="https://github.com/user-attachments/assets/c21f2008-5a15-4863-ae12-ef685205e949">
 <img width="857" alt="image" src="https://github.com/user-attachments/assets/f9f1ec17-ae97-47c5-9276-0a34ae2e2036">
