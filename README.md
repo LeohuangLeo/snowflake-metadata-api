@@ -134,7 +134,7 @@ curl http://127.0.0.1:8000/table-metrics/my_database/my_schema/my_table
 ```
 
 <img width="857" alt="image" src="https://github.com/user-attachments/assets/c21f2008-5a15-4863-ae12-ef685205e949">
-<img width="857" alt="image" src="https://github.com/user-attachments/assets/f9f1ec17-ae97-47c5-9276-0a34ae2e2036">
+<img width="854" alt="image" src="https://github.com/user-attachments/assets/eb270bcd-40a2-4627-9d2c-0dc32f870aa7">
 <img width="850" alt="image" src="https://github.com/user-attachments/assets/7d88eecb-037a-4308-89d1-b53ed01601fb">
 
 
